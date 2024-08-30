@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider } from "styled-components";
+import { Provider } from "react-redux";
+import store from "store/store";
 
-function App() {
+import useScrollToTop from "hooks/use-scroll-to-top";
+
+import MainPage from "page";
+import { ThemeContextProvider } from "context";
+import { ErrorBoundary } from "components";
+
+import { theme } from "./theme";
+
+import { GlobalStyles } from "./styles";
+
+const App: React.FC = () => {
+  useScrollToTop();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeContextProvider>
+      <ErrorBoundary>
+        <ThemeProvider theme={theme}>
+          <Provider store={store}>
+            <GlobalStyles />
+
+            <MainPage />
+          </Provider>
+        </ThemeProvider>
+      </ErrorBoundary>
+    </ThemeContextProvider>
   );
-}
+};
 
 export default App;
