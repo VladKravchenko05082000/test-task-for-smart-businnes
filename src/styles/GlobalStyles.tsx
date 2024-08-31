@@ -81,6 +81,21 @@ html, body, div, span, applet, object, iframe,
     scroll-behavior: smooth;
   }
 
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus {
+    transition: background-color 15000s ease-in-out 0s;
+    -webkit-text-fill-color: ${({ theme }) => theme.colors.textMain} !important;
+  }
+
+  input:focus-visible {
+    outline: none;
+  }
+
+  input {
+    border-style: solid;
+  }
+
   #root {
     height: 100%;
     min-height: 100vh;

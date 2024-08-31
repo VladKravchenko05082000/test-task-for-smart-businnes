@@ -1,10 +1,16 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-import { UsersState } from "./types";
+import { FilterUserPayload, UsersState } from "./types";
 import { fetchAllUsers } from "./action";
 
 const initialState: UsersState = {
   usersData: [],
+  filters: {
+    name: "",
+    email: "",
+    username: "",
+    phone: "",
+  },
   pending: false,
   count: 0,
 };
@@ -13,8 +19,11 @@ export const usersSlice = createSlice({
   name: "users",
   initialState,
   reducers: {
-    increment: state => {
-      state.count = state.count + 1;
+    setFilterUsers: (state, action: PayloadAction<FilterUserPayload>) => {
+      const key = action.payload.key;
+      const searchQuery = action.payload.searchQuery;
+
+      state.filters[key] = searchQuery;
     },
   },
   extraReducers: builder => {
@@ -34,6 +43,6 @@ export const usersSlice = createSlice({
   },
 });
 
-export const { increment } = usersSlice.actions;
+export const { setFilterUsers } = usersSlice.actions;
 
 export default usersSlice;

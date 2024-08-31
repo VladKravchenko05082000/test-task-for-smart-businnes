@@ -17,13 +17,13 @@ const App: React.FC = () => {
   return (
     <ThemeContextProvider>
       <ErrorBoundary>
-        <ThemeProvider theme={theme}>
-          <Provider store={store}>
+        <Provider store={store}>
+          <ThemeProvider theme={theme}>
             <GlobalStyles />
 
             <MainPage />
-          </Provider>
-        </ThemeProvider>
+          </ThemeProvider>
+        </Provider>
       </ErrorBoundary>
     </ThemeContextProvider>
   );

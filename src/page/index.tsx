@@ -1,21 +1,29 @@
 import { useEffect } from "react";
 
+import { Container, Text } from "components";
+
 import { useAppDispatch } from "store/store";
-import { increment } from "store/users";
 import { fetchAllUsers } from "store/users/action";
+import { InputsSection, UsersListSection } from "./components";
 
 const MainPage: React.FC = () => {
   const dispatch = useAppDispatch();
-
-  const onClick = () => {
-    dispatch(increment());
-  };
 
   useEffect(() => {
     dispatch(fetchAllUsers());
   }, []);
 
-  return <div onClick={onClick}>MainPage</div>;
+  return (
+    <Container>
+      <Text textTransform="uppercase" textScale="h1" textAlign="center">
+        Users Dashboard
+      </Text>
+
+      <InputsSection />
+
+      <UsersListSection />
+    </Container>
+  );
 };
 
 export default MainPage;

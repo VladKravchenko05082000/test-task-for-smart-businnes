@@ -18,7 +18,7 @@ export const getEllipsis = ({ ellipsis }: ThemedProps) => {
 };
 
 export const Text = styled.p<TextProps>`
-  color: ${({ color }) => (color ? theme.colors[color] : theme.colors.white)};
+  color: ${({ color }) => (color ? theme.colors[color] : theme.colors.textMain)};
   text-transform: ${({ textTransform }) => textTransform && textTransform};
 
   ${({ textScale }) => textScale && styles[textScale]};
