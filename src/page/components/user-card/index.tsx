@@ -14,7 +14,8 @@ const UserCard: React.FC<UsersDataType> = ({ name, username, phone, email }) => 
         $backgroundColor="gray"
         justifyContent="center"
       >
-        <Image src="/images/user-mock-photo.webp" alt="mock-image" width="225px" height="225px" />
+        <Image src="images/user-mock-photo.webp" alt="mock-image" width="225px" height="225px" />
+        {/*I use the image path without a slash at the beginning so that the image is displayed in production, but this will not work on the local host */}
       </Flex>
 
       <FlexGap gap="8px" flexDirection="column">
