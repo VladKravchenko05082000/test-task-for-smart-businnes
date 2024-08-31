@@ -14,6 +14,7 @@ import { GlobalStyles } from "./styles";
 
 const App: React.FC = () => {
   useScrollToTop();
+  
   return (
     <ThemeContextProvider>
       <ErrorBoundary>

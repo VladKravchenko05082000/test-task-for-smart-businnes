@@ -1,46 +1,13 @@
-# Getting Started with Create React App
+About development approaches
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+To write css styles, I chose the Styled-Components library, I implemented 2 approaches to using the capabilities of this library - through a context using a styled object, and a custom context for using a theme in jsx markup (I did not use this opportunity, but left the opportunity for potential expansion ). I had to choose the latest subversion of version 5 of the library, because on version 6, when transferring props inside components created using the library, an error appeared in the browser that there was no such property.
 
-## Available Scripts
+I chose Styled components for the reason that it minimizes the creation of CSS files, and is more focused on using javascript capabilities, styled-components also supports another library called styled-systems, which allows you to minimize the creation of unnecessary props for, for example, widths and heights, this is essential saves time on writing types.
 
-In the project directory, you can run:
+As well as the developer tools, I chose eslint, which sets certain rules that must be followed when writing code, and also makes it easier to debug the system itself, and prettier, which formats the code according to certain rules and makes the code more readable
 
-### `npm start`
+For store management, the Reduxtoolkit library was chosen, which is an extension of the standard redux library, and introduces a significant number of quality of life features. This is also the basis for writing applications in React.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To obtain data from the back-end, the axios library was chosen, simply for the very reason that I am used to working with it)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+In general, that's all, I tried to minimize the number of uses of unnecessary libraries for the convenience of code checking, I also used several components from my standard template, which I use to develop personal projects. The only difficulty is that the recent new update of styled components caused a bug that I wrote about above, on that particular version there was no adequate way to fix it, so I spent some time solving this problem, it was simply as a result that a decision was made to downgrade the version of the library .
