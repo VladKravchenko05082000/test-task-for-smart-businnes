@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/test-task-for-smart-businnes/static/js/main.b8002956.js",
+    "main.js": "/test-task-for-smart-businnes/static/js/main.8a25ed2f.js",
     "index.html": "/test-task-for-smart-businnes/index.html",
-    "main.b8002956.js.map": "/test-task-for-smart-businnes/static/js/main.b8002956.js.map"
+    "main.8a25ed2f.js.map": "/test-task-for-smart-businnes/static/js/main.8a25ed2f.js.map"
   },
   "entrypoints": [
-    "static/js/main.b8002956.js"
+    "static/js/main.8a25ed2f.js"
   ]
 }
